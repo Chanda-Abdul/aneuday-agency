@@ -4,9 +4,10 @@ import styles from './projects.scss?inline';
 import ShoeShadowsImg from '~/media/imagery/shoe-shadows.jpeg?jsx';
 import UpRightArrowIcon from '~/media/icons/up-right-arrow.svg?jsx';
   
-export interface ProjectsProps {}
+// export interface ProjectsProps {}
 
-export const Projects = component$<ProjectsProps>((props) => {
+export default component$(() => {
+  //  component$<ProjectsProps>((props) => {
   useStylesScoped$(styles);
 
   return (

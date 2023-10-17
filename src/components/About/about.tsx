@@ -6,7 +6,9 @@ import UpRightArrowIcon from '~/media/icons/up-right-arrow.svg?jsx';
 // export interface AboutProps {}
 
 export default component$(() => {
-{/* <AboutProps>((props)  */}
+  {
+    /* <AboutProps>((props)  */
+  }
 
   useStylesScoped$(styles);
 

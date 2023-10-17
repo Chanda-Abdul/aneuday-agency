@@ -2,11 +2,13 @@ import { component$ } from '@builder.io/qwik';
 
 import type { DocumentHead } from '@builder.io/qwik-city';
 
-import { About } from '~/components/About/about';
-import { Company } from '~/components/Company/company';
-import { Events } from '~/components/Events/events';
-import { Projects } from '~/components/Projects/projects';
 import Hero from '~/components/hero/hero';
+import About from '~/components/About/about';
+import Company from '~/components/Company/company';
+import Events from '~/components/Events/events';
+import Projects from '~/components/Projects/projects';
+
+
 
 export default component$(() => {
   return (
@@ -14,7 +16,7 @@ export default component$(() => {
       <Hero />
       <About />
       <Projects />
-      <Events />
+      <Events/>
       <Company />
     </>
   );
