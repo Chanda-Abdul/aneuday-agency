@@ -1,6 +1,11 @@
-.gallery{
+.gallery {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 2.4rem;
-    &__img{aspect-ratio: 5/7;}
-  }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 5/7;
+    }
+}

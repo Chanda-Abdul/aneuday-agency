@@ -44,7 +44,9 @@
   },
   "dependencies": {
     "gsap": "^3.12.2",
+    "locomotive-scroll": "^4.1.4",
     "moment": "^2.29.4",
-    "netlify": "^13.1.10"
+    "netlify": "^13.1.10",
+    "split-type": "^0.3.3"
   }
 }

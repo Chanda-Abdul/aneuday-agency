@@ -1,7 +1,7 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './projects.scss?inline';
-import ShoeShadowsImg from '~/media/imagery/shoe-shadows.jpeg?jsx';
+import ShoeShadowsImg from '~/media/imagery/shoe-shadows.webp?jsx';
 import UpRightArrowIcon from '~/media/icons/up-right-arrow.svg?jsx';
   
 // export interface ProjectsProps {}

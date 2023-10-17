@@ -2,11 +2,11 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import styles from './gallery.scss?inline';
 
-import DaftPunkImg from '~/media/imagery/daft-punk.jpeg?jsx';
-import CircleSitterImg from '~/media/imagery/circle-sitter.jpeg?jsx';
-import DoodleImg from '~/media/imagery/doodle.jpeg?jsx';
-import BooogieBoardImg from '~/media/imagery/boogie-board.jpeg?jsx';
-import JoggerImg from '~/media/imagery/jogger.jpeg?jsx';
+import DaftPunkImg from '~/media/imagery/daft-punk.webp?jsx';
+import CircleSitterImg from '~/media/imagery/circle-sitter.webp?jsx';
+import DoodleImg from '~/media/imagery/doodle.webp?jsx';
+import BooogieBoardImg from '~/media/imagery/boogie-board.webp?jsx';
+import JoggerImg from '~/media/imagery/jogger.webp?jsx';
 
 // export interface GalleryProps {}
 
