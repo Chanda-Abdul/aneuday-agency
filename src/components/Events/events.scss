@@ -1,0 +1,23 @@
+.events {
+    &__title {
+        font-size: 3.2rem;
+    }
+
+    &__list {
+        &--item {
+            padding: .4rem 0;
+            border-bottom: 1px solid var(--color-primary);
+            display: grid;
+
+            &.occurred {
+
+                text-decoration: line-through;
+            }
+
+            &:first-of-type {
+                border-top: 1px solid var(--color-primary);
+            }
+        }
+    }
+
+}

@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-default);
+
+  &__logo h1 {
+    font-size: 1.6rem;
+  }
+
+  * {
+    background-color: transparent;
+  }
+
+
+}
+
+
+
+
+
+
+@media (min-width: 450px) {
+  button {
+    display: contents;
+  }
+
+  .header {
+    &__menu {
+      display: flex;
+      border: none;
+
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+
+      .line {
+        width: 2.4rem;
+        height: 1rem;
+        // background-color: var(--color-primary);
+      }
+
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.hero {
+  display: flex;
+  vertical-align: middle;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  // height: 45rem;
+  justify-content: center;
+  gap: 4rem;
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100ch;
+    margin-inline: auto;
+
+  }
+
+  &__content {
+    color: var(--color-text--light);
+    font-size: 3.6rem;
+
+    // line-height: 7.2rem;
+    span {
+      color: var(--color-text--dark);
+    }
+  }
+
+  &__controls {
+    position: relative;
+    width: 100%;
+
+
+    &--image {
+      position: relative;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+    }
+
+    &--play {
+      position: absolute;
+
+      svg {}
+
+      top: 50%;
+      left: 50%;
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      justify-self: center;
+      z-index: 2;
+    }
+
+    &--text {
+      margin: var(--margin-default);
+      color: var(--color-text--white); 
+      // @include fluid-type(430px, 1440px, 16px, 24px);
+    }
+  }
+
+
+
+
+}
+
+
+
+@media screen and (min-width: 768px) {}

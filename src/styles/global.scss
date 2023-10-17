@@ -1,0 +1,32 @@
+@import '/src/styles/sass/main.scss';
+
+:root {
+  --section-small: 12.8rem;
+  --section-medium: 25.6rem;
+  --section-big: 51.2rem;
+
+  --gutter-small: 12.8rem;
+  --gutter-medium: 25.6rem;
+  --gutter-large: 51.2rem;
+
+  @include below(1200px) {
+    --section-small: 6.4rem;
+    --section-medium: 12rem;
+    --section-big: 16rem;
+
+    --gutter-small: 6.4rem;
+    --gutter-medium: 12rem;
+    --gutter-large: 16rem;
+  }
+
+  @include below(750px) {
+    --section-small: 6.4rem;
+    --section-medium: 9rem;
+    --section-big: 19.2rem;
+
+    --gutter-small: 6.4rem;
+    --gutter-medium: 9rem;
+    --gutter-large: 19.2rem;
+  }
+
+}

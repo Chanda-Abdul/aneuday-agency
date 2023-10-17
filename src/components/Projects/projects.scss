@@ -1,0 +1,42 @@
+.projects {
+
+    &__image {
+        width: auto;
+        height: 50%;
+        object-fit: cover;
+    }
+
+
+    &__content {
+        margin: var(--gutter-small) 0 var(--gutter-small) 0;
+        max-width: 45ch;
+
+        &--title {
+            //    @include fluid-type(430px, 1440px, 24px, 40px);
+            font-size: 4rem;
+            line-height: 1.2;
+            margin-bottom: 4rem;
+        }
+
+        &--text {
+            margin: 0 0 var(--gutter-small) 0;
+        }
+
+        p {
+            text-align: left;
+        }
+    }
+
+
+
+
+
+    @media screen and (min-width: 768px) {
+        display: grid;
+
+        &__image {
+            height: 100%;
+        }
+
+    }
+}

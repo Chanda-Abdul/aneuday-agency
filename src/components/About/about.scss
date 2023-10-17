@@ -1,0 +1,33 @@
+.about {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: var(--padding-default);
+
+        &--title {
+            font-size: 3.2rem;
+            margin-bottom: var(--margin-default);
+        }
+
+        &--text {
+            // padding: var(--padding-default);
+        }
+
+        @media screen and (min-width: 768px) {
+            display: grid;
+
+            &--text {
+                text-align: left;
+
+            }
+        }
+
+
+
+
+    }
+
+}
