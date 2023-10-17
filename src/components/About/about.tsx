@@ -3,9 +3,11 @@ import styles from './about.scss?inline';
 
 import UpRightArrowIcon from '~/media/icons/up-right-arrow.svg?jsx';
 
-export interface AboutProps {}
+// export interface AboutProps {}
 
-export const About = component$<AboutProps>((props) => {
+export default component$(() => {
+{/* <AboutProps>((props)  */}
+
   useStylesScoped$(styles);
 
   return (

@@ -1,11 +1,13 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import moment from 'moment';
 import styles from './events.scss?inline';
+
 import UpRightArrowIcon from '~/media/icons/up-right-arrow.svg?jsx';
 
-export interface EventsProps {}
+// export interface EventsProps {}
 
-export const Events = component$<EventsProps>((props) => {
+export default component$(() => {
+{/* <EventsProps>((props) => { */}
   useStylesScoped$(styles);
 
   const events = [

@@ -1,11 +1,14 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './company.scss?inline';
 import UpRightArrowIcon from '~/media/icons/up-right-arrow.svg?jsx';
-import { Gallery } from '../Gallery/gallery';
+import Gallery from '../Gallery/gallery';
 
-export interface CompanyProps {}
+// export interface CompanyProps {}
 
-export const Company = component$<CompanyProps>((props) => {
+export default component$(() => {
+  {
+    /* <CompanyProps>((props) => { */
+  }
   useStylesScoped$(styles);
 
   return (

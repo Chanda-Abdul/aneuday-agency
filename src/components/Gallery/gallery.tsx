@@ -8,9 +8,12 @@ import DoodleImg from '~/media/imagery/doodle.jpeg?jsx';
 import BooogieBoardImg from '~/media/imagery/boogie-board.jpeg?jsx';
 import JoggerImg from '~/media/imagery/jogger.jpeg?jsx';
 
-export interface GalleryProps {}
+// export interface GalleryProps {}
 
-export const Gallery = component$<GalleryProps>((props) => {
+export default component$(() => {
+  {
+    /* <GalleryProps>((props) => { */
+  }
   useStylesScoped$(styles);
 
   return (
