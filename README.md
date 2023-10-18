@@ -21,6 +21,6 @@ View Demo [here](https://enchanting-pika-2afbf7.netlify.app/)
 - [Building an app with Qwik](https://blog.logrocket.com/building-app-qwik/)
 - [Boost Your Site Perf with Qwik's useVisibleTask$ Hook](https://www.builder.io/blog/qwik-tasks)
 - [Code a Creative Agency Website from Scratch pt. 1](https://youtu.be/vTxhqzp6v24?si=kR9pmdGktxxmKcHO)
+- [GSAP Split Text](https://gsap.com/docs/v3/Plugins/SplitText/)
 - [moment.js](https://momentjs.com/docs)
-
 - [SplitType](https://www.npmjs.com/package/split-type)

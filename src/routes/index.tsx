@@ -9,14 +9,14 @@ import Events from '~/components/Events/events';
 import Projects from '~/components/Projects/projects';
 
 import gsap from 'gsap';
-import {ScrollTrigger, SplitText} from 'gsap/all';
+import { ScrollTrigger } from 'gsap/all';
 import LocomotiveScroll from 'locomotive-scroll';
 
 
 export default component$(() => {
   useVisibleTask$(() => {
     /*  Only runs in the client, for GSAP animations */
-    gsap.registerPlugin(ScrollTrigger, SplitText);
+    gsap.registerPlugin(ScrollTrigger);
 
     const container = document.getElementById('smooth-scroll');
     // gsap.set(container, { autoAlpha: 0 });
@@ -58,56 +58,31 @@ export default component$(() => {
       we should pin things with position: fixed on mobile. 
       We sense it by checking to see if there's a transform applied to the container 
       (the LocomotiveScroll-controlled element).
-      */ 
-     pinType: container?.style.transform ? 'transform' : 'fixed',
+      */
+          pinType: container?.style.transform ? 'transform' : 'fixed',
         }
       );
 
-      /* each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.*/  
+      /* each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.*/
       ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
       ScrollTrigger.defaults({ scroller: container });
 
-      /*after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.*/ 
+      /*after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.*/
       ScrollTrigger.refresh();
     }
 
     initSmoothScroll();
 
-    function initTextReveal() {
-      /* TO-DO - animations => text reveal on scroll, using GSAP splitText */
-     
-      console.log(container);
-      console.log('text reveal');
-      const split = new SplitText(container, {type: "words"});
-      
-      //now animate each character into place from 100px above, fading in:
-      gsap.from(split.words, {duration: 1, y: 100, autoAlpha: 0, stagger: 0.05});
-      // gsap.set(container, { autoAlpha: 1 });
-      // let animation = gsap.timeline({
-      //   repeat: 10,
-      //   yoyo: true,
-      //   repeatDelay: 0.3,
-      // });
 
-     
-      // split = new SplitText('h1', { type: 'chars' });
-      // animation.from(split.chars, {
-      //   opacity: 0,
-      //   y: 50,
-      //   ease: 'back(4)',
-      //   stagger: 0.05,
-      // });
-    }
-    initTextReveal();
   });
 
   return (
     <>
-      <div id='smooth-scroll'>
-        <Hero />
-        <About />
-        <Projects />
-        <Events />
+      <div id='smooth-scroll' data-scroll-container>
+        <Hero data-scroll-section />
+        <About data-scroll-section />
+        <Projects data-scroll-section />
+        <Events data-scroll-section />
         <Company />
       </div>
     </>
@@ -115,11 +90,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: 'Welcome to Qwik',
+  title: 'aneuday',
   meta: [
     {
-      name: 'description',
-      content: 'Qwik site description',
+      name: 'aneuday',
+      content: 'aneuday Creative agency',
     },
   ],
 };

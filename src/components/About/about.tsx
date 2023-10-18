@@ -1,15 +1,8 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './about.scss?inline';
-
-import UpRightArrowIcon from '~/media/icons/up-right-arrow.svg?jsx';
-
-// export interface AboutProps {}
+import { Button } from '../Button/button';
 
 export default component$(() => {
-  {
-    /* <AboutProps>((props)  */
-  }
-
   useStylesScoped$(styles);
 
   return (
@@ -23,13 +16,11 @@ export default component$(() => {
           digital products that offer users a new perspective.
         </p>
 
-        <a href='/' class='button button--dark col-10--span-3'>
-          <span>
-            <span>Our studio</span>
-          </span>
-
-          <UpRightArrowIcon />
-        </a>
+        <Button
+          text='Our studio'
+          styles='dark button col-10--span-3'
+          linkTo='/'
+        />
       </div>
     </section>
   );

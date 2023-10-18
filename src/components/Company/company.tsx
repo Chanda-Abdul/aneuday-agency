@@ -1,14 +1,9 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './company.scss?inline';
-import UpRightArrowIcon from '~/media/icons/up-right-arrow.svg?jsx';
 import Gallery from '../Gallery/gallery';
-
-// export interface CompanyProps {}
+import { Button } from '../Button/button';
 
 export default component$(() => {
-  {
-    /* <CompanyProps>((props) => { */
-  }
   useStylesScoped$(styles);
 
   return (
@@ -22,13 +17,11 @@ export default component$(() => {
           are some of the things you can expect.
         </p>
 
-        <a href='/' class='button button--light col-7--span-6'>
-          <span>
-            <span>Open positions</span>
-          </span>
-
-          <UpRightArrowIcon />
-        </a>
+        <Button
+          text='Open positions'
+          styles='light button col-7--span-6'
+          linkTo='/company'
+        />
       </div>
       <Gallery />
     </section>

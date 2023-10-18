@@ -8,12 +8,9 @@ import DoodleImg from '~/media/imagery/doodle.webp?jsx';
 import BooogieBoardImg from '~/media/imagery/boogie-board.webp?jsx';
 import JoggerImg from '~/media/imagery/jogger.webp?jsx';
 
-// export interface GalleryProps {}
 
 export default component$(() => {
-  {
-    /* <GalleryProps>((props) => { */
-  }
+ 
   useStylesScoped$(styles);
 
   return (

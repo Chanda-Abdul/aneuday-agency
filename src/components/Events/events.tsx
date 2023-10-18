@@ -1,13 +1,10 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import moment from 'moment';
 import styles from './events.scss?inline';
-
-import UpRightArrowIcon from '~/media/icons/up-right-arrow.svg?jsx';
-
-// export interface EventsProps {}
+import { Button } from '../Button/button';
 
 export default component$(() => {
-{/* <EventsProps>((props) => { */}
+
   useStylesScoped$(styles);
 
   const events = [
@@ -127,13 +124,12 @@ export default component$(() => {
           )}
       </ul>
 
-      <a href='/' class='button button--dark col-10--span-3'>
-        <span>
-          <span>More talks</span>
-        </span>
-
-        <UpRightArrowIcon />
-      </a>
+      <Button
+          text='More talks'
+          styles='dark button col-10--span-3'
+          linkTo='/talks'
+        />
+    
     </section>
   );
 });

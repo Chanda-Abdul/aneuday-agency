@@ -29,6 +29,7 @@
     "@builder.io/qwik-city": "^1.2.13",
     "@netlify/edge-functions": "^2.0.0",
     "@types/eslint": "8.44.1",
+    "@types/locomotive-scroll": "^4.1.1",
     "@types/node": "^20.4.5",
     "@typescript-eslint/eslint-plugin": "6.2.0",
     "@typescript-eslint/parser": "6.2.0",

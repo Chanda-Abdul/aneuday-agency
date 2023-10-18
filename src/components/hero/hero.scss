@@ -21,7 +21,7 @@
   &__content {
     font-kerning: none;
     color: var(--color-text--light);
-    font-size: 3.6rem;
+    font-size: 2.4rem;
 
     // line-height: 7.2rem;
     span {
@@ -64,10 +64,16 @@
   }
 
 
-
+  @media screen and (min-width: 600px) {
+    &__content {
+      font-size: 3rem;}
+  }
+  @media screen and (min-width: 768px) {
+  &__content {
+    font-size: 3.6rem;}
+}
 
 }
 
 
 
-@media screen and (min-width: 768px) {}
