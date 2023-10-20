@@ -7,17 +7,9 @@
   // height: 45rem;
   justify-content: center;
   gap: 4rem;
+  // white-space: none;
 
-  &__title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    max-width: 100ch;
-    margin-inline: auto;
-
-  }
-
+  
   &__content {
     font-kerning: none;
     color: var(--color-text--light);
@@ -32,22 +24,39 @@
   &__controls {
     position: relative;
     width: 100%;
-
-
+    margin: 0;
+   padding-top: 10rem;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+ 
+&--content{
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 107rem;
+  position: relative;
+  z-index: 1;
+}
     &--image {
-      position: relative;
+ 
+      // position: relative;
       width: 100%;
       height: auto;
       aspect-ratio: 16/9;
+      padding-top: 2rem;
+      // margin: 0 auto;
     }
 
     &--play {
-      position: absolute;
-
+      
+position: absolute;
       svg {}
-
-      top: 50%;
-      left: 50%;
+// height: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
       display: flex;
       align-items: center;
       align-content: center;
@@ -58,7 +67,8 @@
 
     &--text {
       margin: var(--margin-default);
-      color: var(--color-text--white); 
+      color: var(--color-text--white);
+      font-size: 2.4rem;
       // @include fluid-type(430px, 1440px, 16px, 24px);
     }
   }
@@ -66,14 +76,14 @@
 
   @media screen and (min-width: 600px) {
     &__content {
-      font-size: 3rem;}
+      font-size: 3rem;
+    }
   }
+
   @media screen and (min-width: 768px) {
-  &__content {
-    font-size: 3.6rem;}
-}
+    &__content {
+      font-size: 3.6rem;
+    }
+  }
 
 }
-
-
-

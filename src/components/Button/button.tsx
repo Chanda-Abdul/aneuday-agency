@@ -7,9 +7,6 @@ import UpRightArrowIcon from '~/media/icons/up-right-arrow.svg?jsx';
 import styles from './button.scss?inline';
 import gsap from 'gsap';
 
-import { ScrollTrigger } from 'gsap/all';
-import SplitType from 'split-type';
-
 interface ButtonProps {
   text?: string;
   icon?: number;
@@ -22,49 +19,30 @@ export const Button = component$<ButtonProps>((props) => {
 
   useVisibleTask$(() => {
     /*  Only runs in the client, for GSAP animations */
-    gsap.registerPlugin(ScrollTrigger);
+    const button = document.getElementById('button-reveal');
+    const textContainer = document.getElementById('text-container');
+    const icon = document.getElementById('icon');
 
-    function initButtonReveal() {
-      const button = document.getElementById('button-reveal');
-      const icon = document.getElementById('icon');
-      const textContainer = document.getElementById('text-container');
+    const tl = gsap.timeline({
+      defaults: { autoAlpha: 0 },
+    });
 
-      /* text reveal on scroll, using "GSAP" splitText */
-      const splitText = new SplitType('#text-container', { types: 'words' });
+    tl.from(button, {
+      delay: 2.25,
+      scale: 0,
+      y: -8,
+      duration: 0.75,
+    })
+      .from(textContainer, { delay: 0.5, duration: 0.75, y: -25 }, '>')
 
-      //TO-DO => create GSAP Timeline & add Scroll Trigger
-      gsap.from(button, {
-        // scale: 0,
-        y: 25,
-        // transformOrigin: '50% 0%',
-        duration: 0.5,
-        autoAlpha: 0,
-      });
-
-      gsap.from(textContainer, {
-        delay: 0.5,
-        duration: 0.5,
-        y: -25,
-        autoAlpha: 0,
-      });
-
-      /* Animate words into view */
-      gsap.from(splitText.words, {
-        delay: 1,
-        duration: 1,
-        y: 25,
-        autoAlpha: 0,
-      });
-
-      gsap.from(icon, {
-        delay: 2,
-        duration: 0.75,
-        y: -25,
-        autoAlpha: 0,
-      });
-    }
-
-    initButtonReveal();
+      .from(
+        icon,
+        {
+          duration: 0.5,
+          y: 25,
+        },
+        '>'
+      );
   });
 
   return (
@@ -74,10 +52,9 @@ export const Button = component$<ButtonProps>((props) => {
       onClick$={() => console.log('click')}
       id='button-reveal'
     >
-      <span id='text-container'>
+      <div id='text-container'>
         <span id='text'>{props.text}</span>
-      </span>
-
+      </div>
       <UpRightArrowIcon id='icon' />
     </a>
   );

@@ -18,38 +18,87 @@ export default component$(() => {
 
   useVisibleTask$(() => {
     /*  Only runs in the client, for GSAP animations */
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, SplitType);
 
-    function initTextReveal() {
-      /* text reveal on scroll, using "GSAP" splitText */
-      const content = document.querySelector('.hero');
-      const splitPrimary = new SplitType('#text', { types: 'words' });
+    // gsap.fromTo(
+    //   '.hero',
+    //   { autoAlpha: 0 },
+    //   {
+    //     // start the animation when ".hero" enters the viewport (once)
+    //     scrollTrigger: { trigger: '.hero', scrub: 1 },
+    //     duration: 2,
+    //     pin: true,
+    //     opacity: 1,
+    //     y: -50,
+    //   }
+    // );
 
-      const splitSecondary = new SplitType('#text-secondary', {
-        types: 'words',
-      });
+    // const content = document.querySelector('.hero');
 
-      gsap.from(content, {
+    // const img = document.getElementById('hero-img');
+    const splitPrimary = new SplitType('#text', { types: 'words' });
+
+    const splitSecondary = new SplitType('#text-secondary', {
+      types: 'words',
+    });
+    // gsap.from(content, {
+    //         autoAlpha: 0,
+    //         y: -25,
+    //       });
+
+    const tl = gsap.timeline({
+      defaults: {
         autoAlpha: 0,
-        y: -25,
+        // yoyo: true,
+        //  ease: 'linear'
+        //  ease: "power1.inOut",
+      },
+    });
+
+    tl.from('.hero', {
+   
+    })
+      .from(splitPrimary.words, {
+        duration: 0.5,
+        y: -8,
+        stagger: 0.05,
       })
-      /* Animate characters into view with a stagger effect */
-      gsap.from(splitPrimary.words, {
-        duration: 1,
-        y: 10,
-        autoAlpha: 0,
-        stagger: 0.05,
+      .from(
+        splitSecondary.words,
+        {
+          duration: 1,
+          y: -16,
+          stagger: 0.1,
+        },
+        '<'
+      )
+      .from(
+        '.hero__controls',
+        {
+           scrollTrigger: {
+            trigger: '.hero__controls',
+            scrub: 1,
+          },
+          duration: 1,
+          opacity: 1,
+          y: -50,
+        }
+      )
+      .to('.hero__controls--image', {
+        yPercent: -20,
+        ease: 'none',
+        opacity: 1,
+        scrollTrigger: {
+          trigger: '.hero__controls',
+          start: 'top bottom', // the default values
+          end: 'bottom end',
+          scrub: true,
+        },
       });
-      gsap.from(splitSecondary.words, {
-        delay: 0.25,
-        duration: 1.5,
-        y: 100,
-        autoAlpha: 0,
-        stagger: 0.05,
-      });
-    }
 
-    initTextReveal();
+    // .from(".hero__controls", {
+    //   delay: .25,
+    //   duration: .5,}, ">")
   });
 
   return (
@@ -59,20 +108,21 @@ export default component$(() => {
         <span id='text-secondary'>technology studio</span> located in{' '}
         <span id='text-secondary'> Oslo</span>. We build{' '}
         <span id='text-secondary'>brands</span>, create{' '}
-        <span id='text-secondary'> digital experiences</span>, and shape the{' '}
+        <span id='text-secondary'> digital experiences,</span> and shape the{' '}
         <span id='text-secondary'> stories of tomorrow</span>.
       </p>
 
       <Button text='See our work' styles='dark button' linkTo='/work' />
 
       <div class='hero__controls section--medium--margin'>
+        <div class='hero__controls--content'>
+          <StretchItOutImg class='hero__controls--image' id='hero-img' />
 
-        <StretchItOutImg class='hero__controls--image' />
+          <div class='hero__controls--play'>
+            <PlayButtonIcon />
 
-        <div class='hero__controls--play'>
-          <PlayButtonIcon />
-
-          <h2 class='hero__controls--text'>Watch showreel</h2>
+            <h2 class='hero__controls--text'>Watch showreel</h2>
+          </div>
         </div>
       </div>
     </section>
