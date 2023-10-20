@@ -20,38 +20,16 @@ export default component$(() => {
     /*  Only runs in the client, for GSAP animations */
     gsap.registerPlugin(ScrollTrigger, SplitType);
 
-    // gsap.fromTo(
-    //   '.hero',
-    //   { autoAlpha: 0 },
-    //   {
-    //     // start the animation when ".hero" enters the viewport (once)
-    //     scrollTrigger: { trigger: '.hero', scrub: 1 },
-    //     duration: 2,
-    //     pin: true,
-    //     opacity: 1,
-    //     y: -50,
-    //   }
-    // );
-
-    // const content = document.querySelector('.hero');
-
-    // const img = document.getElementById('hero-img');
     const splitPrimary = new SplitType('#text', { types: 'words' });
 
     const splitSecondary = new SplitType('#text-secondary', {
       types: 'words',
     });
-    // gsap.from(content, {
-    //         autoAlpha: 0,
-    //         y: -25,
-    //       });
-
+   
     const tl = gsap.timeline({
       defaults: {
-        autoAlpha: 0,
-        // yoyo: true,
-        //  ease: 'linear'
-        //  ease: "power1.inOut",
+        // autoAlpha: 0,
+
       },
     });
 
